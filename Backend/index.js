@@ -12,7 +12,7 @@ const app = express();
 dotenv.config();
 
 const port = process.env.PORT;
-const MONOGO_URL = process.env.MONGODB_URL;
+const MONGODB_URL = process.env.MONGODB_URL;
 
 //middleware
 app.use(express.json());
@@ -36,7 +36,7 @@ app.use(
 
 // DB Code
 try {
-  mongoose.connect(MONOGO_URL);
+  mongoose.connect(MONGODB_URL);
   console.log("Conntected to MonogDB");
 } catch (error) {
   console.log(error);
